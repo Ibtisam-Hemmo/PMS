@@ -8,10 +8,7 @@ const signupSchema = (data: userData) => {
     name: Joi.string().required(),
     license_number: Joi.number().required(),
     location: Joi.string().required(),
-    phone: Joi.string()
-      .length(10)
-      .pattern(/^[0-9]+$/)
-      .required(),
+    phone: Joi.number().required(),
     email: Joi.string().email().required(),
     password: Joi.string().required(),
     confirmPassword: Joi.ref('password'),
